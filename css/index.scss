@@ -1,0 +1,350 @@
+@import './_commonFun';
+.wjs_header {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    .container {
+        div:nth-of-type(n+2) {
+            border-left: 1px solid #ccc;
+        }
+        div:nth-of-type(1) {
+            .wjs_code {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: relative;
+                img {
+                    position: absolute;
+                    top: 49px;
+                    left: 0px;
+                    display: none;
+                    z-index: 1;
+                }
+                &:hover {
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .btn-danger {
+        background-color: red;
+        padding: 3px 18px;
+    }
+    .btn-link {
+        color: #000;
+    }
+}
+
+.navbar {
+    height: 80px;
+    box-sizing: content-box;
+}
+
+.navbar-header {
+    height: 80px;
+    .navbar-toggle {
+        margin-top: 23px;
+    }
+}
+
+.navbar-brand {
+    font-size: 40px;
+    line-height: 50px;
+    span {
+        color: #000;
+    }
+    span:nth-of-type(1) {
+        color: red;
+    }
+}
+
+.navbar-nav {
+    >li {
+        >a {
+            line-height: 50px;
+        }
+    }
+}
+
+.wjs_nav {
+    .navbar-nav {
+        >li {
+            >a:hover {
+                border-bottom: 2px solid red;
+            }
+        }
+        .active {
+            >a,
+            a:hover,
+            a:focus {
+                border-bottom: 2px solid red;
+            }
+        }
+    }
+}
+
+.pcImg {
+    width: 100%;
+    height: 380px;
+    display: block;
+    background-size: cover;
+    background-position: center;
+}
+
+.mobileImg {
+    width: 100%;
+    display: block;
+}
+
+.mobileImg>img {
+    width: 100%;
+    display: block;
+}
+
+.wjs_booking {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    .booking-box {
+        height: 50px;
+        margin-top: 20px;
+        a {
+            display: flex;
+            .book-icon {
+                width: 50px;
+                text-align: center;
+                line-height: 80px;
+                font-size: 30px;
+            }
+            .book-text {
+                flex: 1;
+            }
+        }
+    }
+}
+
+.wjs_appointment {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    .col-sm-9 {
+        i {
+            font-size: 20px;
+        }
+        a:hover:nth-of-type(1) {
+            color: red;
+        }
+        a:nth-of-type(2) {
+            color: red;
+            border-bottom: 1px dashed red;
+            padding: 2px;
+        }
+    }
+    .col-sm-3 {
+        i {
+            font-size: 20px;
+        }
+        a:hover {
+            color: red;
+        }
+    }
+}
+
+.wjs_product {
+    background-color: #eee;
+    clear: both;
+    overflow: hidden;
+    .nav-tabs {
+        height: 80px;
+        clear: both;
+        overflow: hidden;
+        li {
+            line-height: 80px;
+            padding-left: 15px;
+            padding-right: 15px;
+            a {
+                border: none;
+                line-height: 50px;
+                background-color: #eee;
+                padding: 13px 15px;
+                &:hover {
+                    background-color: #ccc;
+                    border: none;
+                }
+            }
+        }
+        .active {
+            border-bottom: 2px solid red;
+        }
+    }
+    .tab-pane {
+        padding: 20px;
+            .wjs_box {
+                display: flex;
+                height: 150px;
+                margin-bottom: 20px;
+                .wjs_left {
+                    flex: 1;
+                    line-height: 25px;
+                    background-color: #fff;
+                    position: relative;
+                    h4 {
+                        text-align: center;
+                        margin: 10px 0;
+                    }
+                    > .row{
+                        margin-left: -10px;
+                        margin-right: -10px;
+                        > div {
+                            > p{
+                                margin: 0;
+                                line-height: 25px;
+                            }
+                        }
+                        > div:nth-of-type(odd){
+                            padding-right: 0px;
+                        }
+                        > div:nth-of-type(even){
+                            text-align: right;
+                            padding-left: 0px;
+                        }
+                    }
+                }
+                .wjs_right {
+                    width: 100px;
+                    background-color: #fff;
+                    text-align: center;
+                    padding-top: 20px;
+                    border-left: 1px dashed #ccc;
+                    position: relative;
+                    >p{
+                        font-size: 40px;
+                        font-weight: bold;
+                        >sub{
+                            font-size: 13px;
+                            bottom: 0;
+                        }
+                    }
+                    &::after{
+                        @include fakeElement(0px,-1px);
+                        left: -5px;
+                        top: -5px;
+                    }
+                    &::before{
+                        @include fakeElement(0px,1px);
+                        left: -5px;
+                        bottom: -5px;
+                    }
+            }
+            &.active{
+                color: #fff;
+                .wjs_left{
+                    background-color: #f00;
+                    position: relative;
+                    &::before{
+                        content:'\e915';
+                        // 一定要记得指定字体啊。。。。
+                        font-family: 'wjs';
+                        position: absolute;
+                        left: 0;
+                        top: 0px;
+                        font-size: 26px;
+                    }
+                }
+                .wjs_right{
+                    background-color: #f00;
+                }
+            }
+            &:nth-of-type(2){
+                span:nth-of-type(1){
+                    border: 1px solid blue;
+                    color: blue;
+                    padding: 1px;
+                }
+                span:nth-of-type(2){
+                    border: 1px solid red;
+                    color: red;
+                    padding: 1px;
+                }
+            }
+        }
+    }
+}
+
+
+.wjs_news{
+    padding: 20px;
+    position: relative;
+    .news_title{
+        font-size: 30px;
+        padding-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        &::after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            right: -8px;
+            bottom: -4px;
+        }
+    }
+    .wjs_xian{
+        height: 100%;
+        position: absolute;
+        border-left: 1px dashed #f00;
+        top: 0;
+        left: 45%;
+    }
+    .nav-tabs{
+        border: 0;
+        span{
+            display: block;
+            width: 60px;
+        height: 60px;
+        background-color: #ccc;
+        border: none;
+        font-size: 30px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        color: #fff;
+        margin-bottom: 30px;
+        
+        }
+        li{
+            border: 0;
+            a{
+                padding: 0;
+            }
+        }
+        li.active{
+            a{
+                border: none;
+                span{
+                    background-color: #f00;}
+            }
+        }
+        
+        li:nth-last-of-type(1){
+            span{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .tab-pane{
+        ul{
+            list-style: none;
+            li{
+                line-height: 50px;
+                font-size: 16px;
+                @include setTextLine(1);
+            }
+        }
+    }
+}
